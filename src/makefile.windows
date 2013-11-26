@@ -1,0 +1,5 @@
+CC = C:\\Dev-Cpp\\bin\\mingw32-g++
+CP_TOOL = echo
+CP_DEST = 
+
+MODE = -O2

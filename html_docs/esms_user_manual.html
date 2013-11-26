@@ -1,0 +1,644 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ESMS User Manual</title>
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#esms_user_manual">ESMS User Manual</a></li>
+	<ul>
+
+		<li><a href="#what_is_esms">What is ESMS</a></li>
+		<li><a href="#types_of_esms_users">Types of ESMS users</a></li>
+		<li><a href="#license_and_availability">License and availability</a></li>
+	</ul>
+
+	<li><a href="#1._fundamental_concepts">1. Fundamental concepts</a></li>
+	<ul>
+
+		<li><a href="#1.1_anatomy_of_a_soccer_game_in_esms">1.1 Anatomy of a soccer game in ESMS</a></li>
+		<li><a href="#1.2_rosters_and_players">1.2 Rosters and players</a></li>
+		<li><a href="#1.3_player_positions_and_sides">1.3 Player positions and sides</a></li>
+		<li><a href="#1.4_team_formation">1.4 Team formation</a></li>
+		<li><a href="#1.5_team_tactics">1.5 Team tactics</a></li>
+		<li><a href="#1.6_skills_and_abilities">1.6 Skills and Abilities</a></li>
+		<li><a href="#1.7_stamina_and_fitness">1.7 Stamina and Fitness</a></li>
+		<li><a href="#1.8_aggression">1.8 Aggression</a></li>
+		<li><a href="#1.9_fouls,_cards_and_dps">1.9 Fouls, Cards and DPs</a></li>
+		<li><a href="#1.10_substitutions">1.10 Substitutions</a></li>
+		<li><a href="#1.11_home_bonus">1.11 Home bonus</a></li>
+	</ul>
+
+	<li><a href="#2._teamsheets">2. Teamsheets</a></li>
+	<ul>
+
+		<li><a href="#2.1_structure_of_a_teamsheet">2.1 Structure of a teamsheet</a></li>
+		<li><a href="#2.2_team_name">2.2 Team name</a></li>
+		<li><a href="#2.3_tactic">2.3 Tactic</a></li>
+		<li><a href="#2.4_opening_squad">2.4 Opening squad</a></li>
+		<li><a href="#2.5_substitutes">2.5 Substitutes</a></li>
+		<li><a href="#2.6_penalty_kick_taker">2.6 Penalty kick taker</a></li>
+		<li><a href="#2.7_player_numbering">2.7 Player numbering</a></li>
+		<li><a href="#2.8_orders">2.8 Orders</a></li>
+		<li><a href="#2.9_a_complete_sample_teamsheet">2.9 A complete sample teamsheet</a></li>
+	</ul>
+
+	<li><a href="#3._epilogue">3. Epilogue</a></li>
+	<ul>
+
+		<li><a href="#3.1_what's_next">3.1 What's next</a></li>
+		<li><a href="#3.2_contact">3.2 Contact</a></li>
+		<li><a href="#3.3_some_history">3.3 Some history</a></li>
+	</ul>
+
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="esms_user_manual">ESMS User Manual</a></h1>
+<p>This document is the official user's manual for the 
+ESMS program.</p>
+<p>
+</p>
+<h2><a name="what_is_esms">What is ESMS</a></h2>
+<p>ESMS is an acronym for <strong>E</strong>lectronic <strong>S</strong>occer <strong>M</strong>anagement <strong>S</strong>imulator. It is a program,
+or rather a family of programs, that allows people to run fantasy soccer management 
+games. Think of a soccer computer game, like Championship Manager, for example. It allows
+you to build a team of players and manage them through a soccer league, setting the opening
+squad, tactics and formations, substituting players etc. You deal with player injuries,
+suspensions, transfers and all the other aspects of soccer team management.</p>
+<p>ESMS gives you these abilities, but submits the whole league to your control, and not
+the PC's. That means that you decide how your league looks like, what teams play (these
+are often completely made-up, fantasy teams, and not copies of real soccer teams), who
+are the managers (it can be your friends, or just people from the Internet who want to
+play), etc. It's really a wholly another concept, which might be difficult to get used
+to unless you know what you want. The best advice I can give at this point is to look at
+some existing fantasy leagues online that use ESMS, to get a feel of how these things
+work (it is as simple as looking for ``esms soccer league'' or something similar in your
+favorite web-search engine).</p>
+<p>
+</p>
+<h2><a name="types_of_esms_users">Types of ESMS users</a></h2>
+<p>The ESMS users can be roughly divided to two camps:</p>
+<ol>
+<li></li>
+You play, or intend to play, in a ESMS league opened by someone else. Read this document
+carefully if it's your first experience with ESMS - it teaches all the basics you need to
+play the game.
+<p></p>
+<li></li>
+You plan to create a ESMS league of your own. I warmly recommend some prior ESMS 
+experience if you want to do this. There are plenty of active ESMS leagues online - playing
+in one teaches a lot about creating one. Anyway, you must the Administrator's manual as well,
+but only after you read and fully understand this document.
+<p></p></ol>
+<p>
+</p>
+<h2><a name="license_and_availability">License and availability</a></h2>
+<p>Some people believe that the best thing about ESMS is that it's completely free and 
+widely available.</p>
+<p><strong>Free</strong> - ESMS is open source software: It is free 
+to use and distribute, and its source code is freely available. ESMS is licensed 
+with the GNU General Public License (GPL) - see GNU's website at <a href="http://www.gnu.org">http://www.gnu.org</a> for 
+more details.</p>
+<p><strong>Available</strong> - As I mentioned in the previous paragraph, ESMS's source code is 
+free. I distribute the binaries (executables) formally only for Windows, because this is where most of
+its users are. But ESMS easily compiles on all Unix platforms, and many people
+use it on Linux servers. Additinally, if your native language isn't English, ESMS
+has special provision for translators that will make it friendly to your native-language
+users. ESMS was translated to Italian, Spanish, Portuguese, Russian, Lithuanian, Czech, Polish, Swedish
+and French by loyal fans, but there may be more translations I'm personally not aware of.</p>
+<p>
+</p>
+<hr />
+<h1><a name="1._fundamental_concepts">1. Fundamental concepts</a></h1>
+<p>The main goal of ESMS is to simulate a game of soccer between two teams: given some textual 
+description of the teams - players, tactics, formations and so on, ESMS runs a soccer
+simulation and produces textual output 
+files that describe the game.</p>
+<p>
+</p>
+<h2><a name="1.1_anatomy_of_a_soccer_game_in_esms">1.1 Anatomy of a soccer game in ESMS</a></h2>
+<p>A team in ESMS is represented by a <strong>roster</strong> - a text file that lists the team's players
+with their various abilities/attributes (age, tackling skill, aggression etc.) and 
+league status (injured, suspended, fitness level, etc.)</p>
+<p>ESMS simulates a soccer game between two teams. Its input for each team is the roster, and 
+a <strong>teamsheet</strong> submitted by the team's manager. The teamsheet specifies which players play
+in the game in the opening squad, who sits on the bench, what is the tactic/formation, provides
+the orders for substitutions and tactic/formation changes, etc.</p>
+<p>Given two rosters and two teamsheets for these rosters, ESMS runs a game and reports the 
+result in a detailed commentary file that looks somewhat like the textual commentary in
+Championship Manager - all the interesting game events are reported sorted by their time
+of occurence. The commentary file also summarizes the game, with various team
+and player statistics for both teams.</p>
+<p>
+</p>
+<h2><a name="1.2_rosters_and_players">1.2 Rosters and players</a></h2>
+<p>The roster of each team is usually just a text file named xxx.txt where <em>xxx</em> is the 3 letter
+abbreviation of a team (team names in ESMS have registered abbreviations, to keep file
+names short). It isn't necessary to restrict the abbreviation to 3 letters, but it has proved
+to be the most convenient method.</p>
+<p>If you look at a roster of a ESMS team (if you have no rosters nearby, see the Administrator's
+manual for help on generating rosters), you will see a header and a list of players. The header
+and a line for some player look like this:</p>
+<pre>
+ Name         Age Nat Prs St Tk Ps Sh Sm Ag KAb TAb PAb SAb Gam Sav Ktk Kps Sht Gls Ass  DP Inj Sus Fit
+ ------------------------------------------------------------------------------------------------------
+ A_Santiago    20 arg   C  3 15  9  8 35 24 300 320 556 108  11   0  29   9   6   0   1   8   0   0  85</pre>
+<p>The structure of a player's description is as follows:</p>
+<p><strong>Name</strong>: The player's name. It is advised not to give players names longer than 12 characters. The name
+must consist of contiguous non-whitespace characters - spaces in names are forbidden ('_' is frequently used 
+instead).</p>
+<p><strong>Age</strong>: The player's age.</p>
+<p><strong>Nat</strong>: The player's nationality - a 3 letter abbreviation. (In our example, 'arg' represents Argentina).</p>
+<p><strong>Prs</strong>: Preferred side - one or more of R (Right), L (Left) and C (Center) that specify where on the field the 
+player is most effective. Combinations of these 3 letters signify players who are good on more than one side:
+RC, RL, LC and RLC.</p>
+<p><strong>St</strong>: Shot stopping skill - how well the player performs between the posts (how good a Goalkeeper he is).</p>
+<p><strong>Tk</strong>: Tackling skill - how well the player tackles, important for defensive players.</p>
+<p><strong>Ps</strong>: Passing skill - how well the player passes, important for midfield players.</p>
+<p><strong>Sh</strong>: Shooting skill - how well the player shoots to goal, important for offensive players.</p>
+<p><strong>Sm</strong>: Stamina - how enduring the player is. Players with high stamina get tired less quickly.</p>
+<p><strong>Ag</strong>: Aggression - how aggressive the player is.</p>
+<p><strong>KAb, TAb, PAb, SAb</strong>: Shot stopping, Tackling, Passing, ShootingAbilities - the player's ability 
+in each of the 4 main skills. Read on for more details.</p>
+<p>The following are ``statistics'' - they may be reset for each new league season, and in general
+represent some ``state'' of the player in the league, opposed to the attributes that stick with
+the player.</p>
+<p><strong>Gam</strong>: Games - how many games the player played so far in the league.</p>
+<p><strong>Sav</strong>: Saves - the amount of saves the player has made while playing as a Goalkeeper.</p>
+<p><strong>Ktk</strong>: Key tackles - how many important (goal saving) tackles the player has made.</p>
+<p><strong>Kps</strong>: Key passes - how many important (leading to a scoring opportunity) passes the player has made.</p>
+<p><strong>Sht</strong>: Shots - how many shots at the opponent's goal the player has made.</p>
+<p><strong>Gls</strong>: Goals - how many goals the player has scored.</p>
+<p><strong>Ass</strong>: Assisted - how many goals the player has assisted.</p>
+<p><strong>DP</strong>: Disciplinary Points - how many disciplinary points has the player accumulated. Read on for more info.</p>
+<p><strong>Inj</strong>: Injury - for how many games/weeks is the player currently injured.</p>
+<p><strong>Sus</strong>: Suspension - for how many games/weeks is the player currently suspended.</p>
+<p><strong>Fit</strong>: Fitness - on a scale of 1 - 100, how fit the player is to play in the next game.</p>
+<p>Note the delicate games/weeks issue in injuries and suspensions. ESMS fantasy leagues usually try to
+mimic real-world soccer leagues by playing one game per week. However, sometimes cup games are played
+in the middle of the week. Injuries are, naturally, specified in time units like weeks, but suspensions
+are usually specified in an amount of games.</p>
+<p>
+</p>
+<h2><a name="1.3_player_positions_and_sides">1.3 Player positions and sides</a></h2>
+<p>Unlike in other games, a player in ESMS doesn't have a pre-defined position. A player has a set of skills which
+makes him more suitable on some positions than on others - it is up to his manager to decide on which
+position to play him. The positions in ESMS are:</p>
+<ul>
+<li></li>
+GK - goalkeeper. The solitary guardian-angel of your team's goal. Players with high St (Shot stopping) 
+skills are good GKs.
+<p></p>
+<li></li>
+DF - defender. DFs are the major line of defense of your team. They usually tackle most of the 
+opponent's attacks. Players play best as DFs when their Tk (Tackling) skill is high.
+<p></p>
+<li></li>
+DM - defensive midfielder. DMs balance between defense and midfield. They help protect your goal,
+but they also take their chances in advancing and feeding the attackers with vital passes.
+Players play best as DMs when they have good Tk and Ps (Passing) skills.
+<p></p>
+<li></li>
+MF - midfielder. MFs are the main link between your defense and offense. 
+Players with a high Ps skill are good midfielders.
+<p></p>
+<li></li>
+AM - attacking midfielder. AMs are up there in the offense, trying to score goals and support the 
+forwards. Players play best as AMs when they have good Ps and Sh (Shooting) skills.
+<p></p>
+<li></li>
+FW - forward. The major fire-power of your team. FW are fed with passes from your midfield and score goals.
+Players function best as FWs when their Sh skill is high.
+<p></p></ul>
+<p>Players also play on different sides of the field. The sides, as you have already seen are Right,
+Left and Center. Any player in ESMS can play on any side (just like he can play on any position) but players
+will perform much better when playing on their preferred side. When you specify how a player will play in
+your teamsheet (see the explanation of teamsheets for more info), you must combine the positions with the 
+side (except for the goalkeeper). For example, DML means that the player plays as a left defensive midfielder;
+FWC means a central forward, etc. GK is the only player for which the side isn't explicitly specified.</p>
+<p>
+</p>
+<h2><a name="1.4_team_formation">1.4 Team formation</a></h2>
+<p>A team formation is simply a summary of what positions its players play on. It should be familiar from
+the real soccer world and computer games. For example 4-4-2 is commonly used to specify that the team
+plays with 4 defenders, 4 midfielders and 2 attackers.</p>
+<p>In ESMS the formation is implicitly inferred from the positions assigned to all players. You don't specify a 
+formation in the teamsheet - you specify the positions your players
+play in. Formation can be useful on the league-level, however, to impose certain restrictions on teamsheets.
+For example, some leagues forbid to play with more than 5 defenders, or with more than 3 attackers. 
+ESMS doesn't mind how you play your players - as long as they're 11 and there's one goalkeeper. You 
+can in theory put a team of a GK + 10 left midfielders (MFL), ESMS won't mind, but don't be surprised if your
+team won't shine - a healthy balance of defense and offense is required to play well. ESMS was built to mimic reality - what works in reality will work in ESMS as well. Common real-world
+formations like 4-4-2, 5-2-3, 3-1-5-2 etc proved to be effective.</p>
+<p>Special care has to be given to sides of players. Playing with 4 players in the defense may be solid,
+but not quite so if they are all assigned to the Right. Balanced formations perform better than 
+unbalanced - for example when you play with 4 players in defense, the balanced formations are LCCR (Left,
+two Centers and one Right) and LLRR (two Lefts, two Rights), and so on. The multitude of formations and
+side assignments makes it rather tricky to build a really strong team - you will need a good mix of 
+players with various skills for each position. An injury of a key player can be quite a challenge to the
+manager, that may be forced to change his game-style while this player can't play.</p>
+<p>
+</p>
+<h2><a name="1.5_team_tactics">1.5 Team tactics</a></h2>
+<p>Another issue a manager has to consider is the tactic his team will use in the game. ESMS supports
+a variety of tactics - in fact, tactics are fully customizable and can be set by each league for its
+own needs. I'll describe the default tactics that come with ESMS - they have been tested by time and
+provide an interesting variety.</p>
+<ul>
+<li></li>
+Normal (<strong>N</strong>) - The most basic tactics in ESMS (don't be folled by ``basic'' - in some cases N is the most
+effective way to play). It provides no special benefits, but also has almost no vulnerabilities. A team
+playing N will enjoy a stable mix of defense and offense.
+<p></p>
+<li></li>
+Defensive (<strong>D</strong>) - A team playing D focuses a lot on defense. If you want to keep the score down, giving 
+a strong fight in the defense, but also not taking much opportunities in the offense, D is the tactic
+for you. With this tactic your midfielders, and even attackers to some extent focus more on the defense,
+hence your opponent will have a hard time scoring, but so will you.
+<p></p>
+<li></li>
+Attacking (<strong>A</strong>) - The most offensive tactic. Your team is eager to score - the attackers stick
+near to the opponent's goal, the midfielders take a lot of chances and even the defenders join
+to help. This all gives good offense, but your defense will suffer greatly.
+<p></p>
+<li></li>
+Passing (<strong>P</strong>) - Your team will push for offense, driving slow but efficient attacks. Naturally, when
+a team focuses on attack, the defense is weaker. This tactic is more 
+offensive than N but less than A.
+<p></p>
+<li></li>
+Counter Attack (<strong>C</strong>) - The defenders concentrate on defense, but seek opportunities to drive the
+midfielders and attackers to stinging counter-attacks. This tactic is more offensive than D but less
+than N.
+<p></p>
+<li></li>
+Long Ball (<strong>L</strong>) - The most unusual tactic, which can sometimes be a winner and sometimes fail, depending
+on the opponent. With L, your attack is driven by long balls right from the defense, and midfielders play
+a minor role. This tactic is usually used by teams with relatively weak midfielders.
+<p></p></ul>
+<p>In addition, certain tactics have bonuses agains other tactics. This is summarized in the following table:</p>
+<pre>
+ Tactic  Against  Bonus type
+ ---------------------------
+ N       -        -
+ D       L        Defense
+ A       -        -
+ P       L        Defense &amp; Offense
+ C       A &amp; P    Midfield &amp; Offense
+ L       C        Defense &amp; Midfield</pre>
+<p>As you can see, the bonuses are quite convoluted. Bonuses are not a provision for victory, of course, but
+they make tactic-picking more interesting. Just like in real life, it may help if you have a general
+idea of what tactic your opponent is going to use.</p>
+<p>
+</p>
+<h2><a name="1.6_skills_and_abilities">1.6 Skills and Abilities</a></h2>
+<p>As you have already learned, there are four major skills in ESMS - St (Shot stopping), Tk (Tackling),
+Ps (Passing) and Sh (Shooting). These skills have the biggest effect on how players play, and on which
+positions they perform best. It would be boring, however, if the skills of players were constant 
+throughout their career and it wouldn't reflect what happens in real soccer. For this reason, ESMS has 
+the concept of Abilities.</p>
+<p>An ability is means for a player to improve his skill over time. Each player has an ability rating (a number
+between 1 and 1000) for each of the major skills (KAb, TAb, PAb, SAb). The ability is affected by the 
+player's performance in each game. If you want to see exactly how the abilities change for each event,
+see the Administrator's manual.</p>
+<p>Eventually, abilities cause skill increases or decreases. For example, once a certain player's PAb (Passing
+ability) reaches 1000, it is reset and his Ps skill raises by one point. The same happens with decreases.
+This makes players in ESMS dynamic - they usually improve over time, especially if they perform well - just
+like real players do.</p>
+<p>
+</p>
+<h2><a name="1.7_stamina_and_fitness">1.7 Stamina and Fitness</a></h2>
+<ul>
+<li></li>
+Fitness - while playing, a player gets tired. For each minute he plays, a small amount of fatigue adds
+up, and this makes a player generally less effective over time. The difference is not great, but it is
+certainly advantageous to substitute players to bring some fresh wind into your team's sails. The players'
+fitness rating is a number between 1 and 100 (100 means the player is 100% fit, etc) that tells the
+fitness level the player will start his next game with. On each minute he plays, the player's fitness
+goes down a little bit, and he ends the game less fit. Between games, some amount of fitness is added to
+each player.
+<p></p>
+<li></li>
+Stamina - stamina is a rating between 1 and 100 denoting how endurant a player is. It is a constant rating
+that affects how quickly a player loses fitness while playing. A player with stamina 80 will be generally
+more fit after a full game than a player with stamina 60.
+<p></p></ul>
+<p>The meaning of Fitness and Stamina in ESMS is quite simple - players get tired and should get some rest
+from time to time. Your league can set its own rules about fitness recovery (see the Administrator's 
+manual), but generally it is desired to keep an eye on your players' fitness. Sometimes it is better
+to play a lower-skilled player with fitness 100 than a higher-skilled player who is very tired and
+has fitness 50.</p>
+<p>
+</p>
+<h2><a name="1.8_aggression">1.8 Aggression</a></h2>
+<p>Each player in ESMS plays aggressively to a certain degree. Aggression is a constant rating between 1 and 
+100. A more aggressive player will sometimes perform better (because he's so eager and has a lot of motivation
+to win balls), but will usually commit more fouls.</p>
+<p>
+</p>
+<h2><a name="1.9_fouls,_cards_and_dps">1.9 Fouls, Cards and DPs</a></h2>
+<p>Players in ESMS commit fouls, that may lead to them getting (yellow or red) cards, and sometimes causes
+penalties. ESMS doesn't keep count of all the fouls - only of the most serious ones, which at least
+deserve a warning from the referee. The amount of disciplinary points of each player accumulates and
+for a certain amount of points he will be suspended for one game or more. For the exact workings of 
+this mechanism, consult the Administrator's manual.</p>
+<p>
+</p>
+<h2><a name="1.10_substitutions">1.10 Substitutions</a></h2>
+<p>ESMS supports a configurable amount of players on the bench and of the amount of substitutions allowed.
+The default is what currently seems to be the norm in European soccer leagues - 7 players listed on the 
+bench, and 3 substitutions allowed per game.</p>
+<p>The game engine itself performs automatic substitutions in certain occasions - when someone gets injured
+for instance - to replace the injured player with a substitute player from the bench. Additionally, if the
+team's Goalkeeper gets injured or suspended (by a red card), ESMS will look for a way to substitute him
+for another GK, or (if your team has done all 3 substitutions) move another player to play as a GK.</p>
+<p>
+</p>
+<h2><a name="1.11_home_bonus">1.11 Home bonus</a></h2>
+<p>Just like in real life, teams playing at their home stadium have a little advantage over the guests.
+They know the field better, the crowd is supportive, etc. ESMS takes this into account and a certain
+bonus is given to home teams, that is, everything else being equal (equal skills of players, formations
+and tactics) a home team has a slightly higher chance to win. The exact amount of the bonus, like most
+of the things in ESMS is configurable, and each league can decide on its favorite bonus.</p>
+<p>
+</p>
+<hr />
+<h1><a name="2._teamsheets">2. Teamsheets</a></h1>
+<p>Teamsheets are a way for the manager to control the game of his team. This section explains in detail 
+what one should write in the teamsheet and how the teamsheet file should be structured.</p>
+<p>
+</p>
+<h2><a name="2.1_structure_of_a_teamsheet">2.1 Structure of a teamsheet</a></h2>
+<p>A manager submits a teamsheet for his team before each game - where he lists the players that 
+will play and various orders for his team to execute during the game. Here is a good place to
+emphasize that games in ESMS are off-line, the manager gives all his commands <em>before</em> the game
+and sees the results after it ends. There's no way to intervene during a game. This aspect is 
+essential to the nature of ESMS - administrators usually run all the games at once, without 
+intervention from the managers (otherwise it would just be a logistic mess).</p>
+<p>Below is a template teamsheet, with explanations of what each field means. Lines starting with
+``//'' are comments for clarification, and should not appear in real teamsheets.</p>
+<pre>
+ [Team name]           
+ [Tactic]
+ 
+ // Opening squad - a mandatory goalkeeper and 10 other players
+ 
+ GK    [Name]   
+ [Pos] [Name]          
+ [Pos] [Name]     
+ [Pos] [Name] 
+ [Pos] [Name]
+ [Pos] [Name]
+ [Pos] [Name]
+ [Pos] [Name]
+ [Pos] [Name]
+ [Pos] [Name]
+ [Pos] [Name]
+ 
+ // The substitutes (here I use the default amount 7)
+ 
+ [Pos] [Name]          
+ [Pos] [Name]         
+ [Pos] [Name]
+ [Pos] [Name]
+ [Pos] [Name]
+ [Pos] [Name]
+ [Pos] [Name]
+ 
+ PK: [Name]
+ 
+ // Orders...
+ 
+ [Action] IF [Condition] 
+ [Action] IF [Condition]   
+ ...
+ ...</pre>
+<p>
+</p>
+<h2><a name="2.2_team_name">2.2 Team name</a></h2>
+<p>The 3 letter abbreviation of your team. This tells ESMS what roster represents your team.</p>
+<p>
+</p>
+<h2><a name="2.3_tactic">2.3 Tactic</a></h2>
+<p>The tactic your team starts the game with. You can give orders to change the tactic later
+in the game.</p>
+<p>
+</p>
+<h2><a name="2.4_opening_squad">2.4 Opening squad</a></h2>
+<p>List of the 11 players that start the game and their positions. The first player must
+be the team goalkeeper, and there can only be one goalkeeper. [Name] is simply the player's
+name from the roster, and [POS] is his 3 letter position - for example DFL, AMC...</p>
+<p>
+</p>
+<h2><a name="2.5_substitutes">2.5 Substitutes</a></h2>
+<p>The players on the bench (I use here the ESMS default of 7 subs). Position should also
+be specified for these players, as it will help ESMS in its automatic substitutions. If
+your defender gets injured, you'd want ESMS to substitute another defender for it, rather
+than a forward.</p>
+<p>
+</p>
+<h2><a name="2.6_penalty_kick_taker">2.6 Penalty kick taker</a></h2>
+<p>The primary penalty shooter of your team. If this player gets injured/suspended/substituted,
+ESMS will find another player to take the shots.</p>
+<p>
+</p>
+<h2><a name="2.7_player_numbering">2.7 Player numbering</a></h2>
+<p>After you've specified all your team's players for the game, you can refer to them in the 
+orders by their numbers. The numbers start with 1 for the goalkeeper and up to the last
+sub. For example, 11 is the last player in the opening squad, 12 is the first sub, and so on.</p>
+<p>
+</p>
+<h2><a name="2.8_orders">2.8 Orders</a></h2>
+<p>This is, by far, the trickiest part of the teamsheet. Orders are given in a mini-language that
+tells ESMS what to do and when. Each order consists of an action (what to do) and a group of
+conditions (when to do it). ESMS will execute an order if all the conditions for it are satisfied.
+The actions in ESMS are:</p>
+<ul>
+<li><strong><a name="item_tactic_%5bnew_tactic%5d">TACTIC [new tactic]</a></strong><br />
+</li>
+Orders ESMS to change your team's tactic to [new tactic].
+<p></p>
+<li><strong><a name="item_changepos_%5bname%2fnumber%2fposition%5d_%5bnew_po">CHANGEPOS [name/number/position] [new position]</a></strong><br />
+</li>
+Tells ESMS to change the position of a certain player. You can refer to a player by his name, number or by a position. If a position is specified, ESMS finds the worst player on this position (worst - meaning
+with the lowest relevant skill, for example Ps for midfielders).
+<p></p>
+<li><strong><a name="item_sub_%5bname%2fnumber%2fposition_out%5d_%5bname%2fn">SUB [name/number/position out] [name/number in] [new position]</a></strong><br />
+</li>
+Substitutes a player. Takes a name, number or a position of a player to take out, just like CHANGEPOS. Additionally,
+takes the name or number of a player to bring in, and the position he'll play.
+<p></p></ul>
+<p>The actions are still not full order lines, which should also include at least one condition. In general,
+several conditions can be given, separated by commas. The conditions in ESMS are:</p>
+<ul>
+<li><strong><a name="item_if_min_%5bsign%5d_%5bminute%5d">IF MIN [sign] [minute]</a></strong><br />
+</li>
+If the game is now before, at, or after a certain minute. The allowed signs are =, &lt;, &gt;, &lt;= and &gt;= with
+their usual mathematical meanings.
+<p></p>
+<li><strong><a name="item_if_score_%5bsign%5d_%5bscore%5d">IF SCORE [sign] [score]</a></strong><br />
+</li>
+Specifies the goal difference between your team and the opponent's team. A positive goal 
+difference means you lead, a
+negative means the opponent leads. For example 2 means you lead by 2 goals (e.g. the score is 2-0, 3-1,
+4-2 and so on). Similarly, -2 means that you lose by 2 goals. The sign has the same meaning as in the MIN condition.
+<p></p>
+<li><strong><a name="item_if_yellow_%5bposition%2fname%2fnumber%5d">IF YELLOW [position/name/number]</a></strong><br />
+</li>
+If the player got a yellow card. If a position is given, any player on this position counts.
+That is, for MFC - if any central midfielder got a yellow card.
+<p></p>
+<li><strong><a name="item_if_red_%5bposition%2fname%2fnumber%5d">IF RED [position/name/number]</a></strong><br />
+</li>
+Similar to the previous condition, but with a red and not a yellow card.
+<p></p>
+<li><strong><a name="item_if_inj_%5bposition%2fname%2fnumber%5d">IF INJ [position/name/number]</a></strong><br />
+</li>
+Similar to the previous condition, but with an injury instead of a card.
+<p></p></ul>
+<p>To make things clearer, here are some sample orders with explanations:</p>
+<pre>
+ TACTIC A IF MIN &gt;= 45, SCORE =&lt; -1</pre>
+<p>Tells the program to change the tactic to attacking if it 
+is later than the 45th minute and your team is losing by one or more goals.</p>
+<pre>
+ TACTIC A IF MIN =&gt; 45, SCORE =&lt; -1, SCORE &gt; -4</pre>
+<p>Tells the program to change the tactic to attacking if it 
+is later than the 45th minute and your team is losing by one or more, but 
+less than 4 goals.</p>
+<pre>
+ CHANGEPOS J_Doe MFC IF MIN &lt;= 20, SCORE &gt;= 1</pre>
+<p>Changes the position of J_Doe to MFC if it's earlier than the 20th minute and your
+team leads by one goal or more.</p>
+<pre>
+ SUB MFC 12 DFC IF MIN = 60, SCORE =&gt; 1</pre>
+<p>Substitutes the worst MFC of your team for player 12 (that will play DFC) if you are leading
+by one goal or more on the 60th minute.</p>
+<pre>
+ CHANGEPOS FWC MFC IF RED MFC, MIN &gt;= 50</pre>
+<p>Changes the position of the worst FWC of your team to MFC if some MFC got a red card after
+the 50th minute.</p>
+<p>
+</p>
+<h2><a name="2.9_a_complete_sample_teamsheet">2.9 A complete sample teamsheet</a></h2>
+<p>To help you get started with writing teamsheets, here is a complete teamsheet with comments (these
+// comments should not appear in a real teamsheet - they're here just to explain):</p>
+<pre>
+ // The team's 3 letter abbreviation is aft - meaning its roster is aft.txt
+ 
+ aft
+ 
+ // Start the game playing P - passing
+ 
+ P
+ 
+ // The opening squad: the formation is 4-3-1-2, note the side balance 
+ // of players
+ 
+ GK T_Edua
+ DFL J_Balboa
+ DFC B_Ekse
+ DFC X_Solatti
+ DFR PJ_Plant
+ MFL I_Gustavson
+ MFR M_Fowler
+ MFC Morinho
+ AMC F_Longfellow
+ FWL M_Ecuarti
+ FWR I_Edo
+ 
+ // The subs
+ 
+ GK W_Pfarcec
+ DFC T_Vittorio
+ MFC D_Rombart
+ DFL M_May
+ FWL F_Iksandr
+ MFR C_Radulovic
+ AMC R_Berski
+ 
+ // Primary penalty taker
+ 
+ PK: I_Edo</pre>
+<pre>
+ // Orders
+ 
+ // Change tired for fresh players on the 70th minute
+ SUB B_Ekse T_Vittorio DFC IF MIN = 70
+ SUB M_Fowler C_Radulovic MFR IF MIN = 70
+ 
+ // Change the worst DFC to play as MFC if we're not winning after the 50th minute
+ CHANGEPOS DFC MFC IF MIN &gt;= 50, SCORE &lt;= 0
+ 
+ // The following 3 orders happen if the team is losing somewhere after the 65th minute.
+ // It's an obviously offensive scenario: the tactic will change to Attacking, we'll move
+ // a player up front from AMC to FWC and bring in another AMC instead of a MFC
+ TACTIC A IF MIN &gt;= 65, SCORE &lt; 0
+ CHANGEPOS F_Longfellow FWC IF MIN &gt;= 65, SCORE &lt; 0
+ SUB Morinho R_Berski AMC IF MIN &gt;= 65, SCORE &lt; 0</pre>
+<p>
+</p>
+<hr />
+<h1><a name="3._epilogue">3. Epilogue</a></h1>
+<p>
+</p>
+<h2><a name="3.1_what's_next">3.1 What's next</a></h2>
+<p>This document teaches you the basics of ESMS. But it won't make you an ESMS expert - that
+takes some time an experience. You are cordially invited to read the Administrator's manual, that will
+give you knowledge of how to actually run ESMS leagues, and will teach you about certain ESMS concepts
+in depth.</p>
+<p>The best way to get acquainted with the program and get a feel for how it works is to
+experiment. Each user, even a manager who only participates in games, is encouraged to
+run some test matches with ESMS. It is very easy, if you read the Administrator's manual,
+and can add greatly to your understanding of ESMS. Besides, it's usually a lot of fun
+to make up teams and teamsheets and see them clash !</p>
+<p>
+</p>
+<h2><a name="3.2_contact">3.2 Contact</a></h2>
+<p>This document, as is ESMS itself, was written and is maintained by Eli Bendersky. My email address
+is <a href="mailto:eliben@gmail.com.">eliben@gmail.com.</a> Feel free to send me comments, feedback and questions. I usually answer emails
+very regularly and will be glad to help.</p>
+<p>ESMS also has a low-volume, but important mailing list at Yahoo Groups. In the list new features are 
+usually discussed, and
+people often ask questions and request ideas for their ESMS leagues. To sign to the mailing list,
+visit <a href="http://groups.yahoo.com">http://groups.yahoo.com</a> and look for <code>esms</code>.</p>
+<p>
+</p>
+<h2><a name="3.3_some_history">3.3 Some history</a></h2>
+<p>ESMS was initially created by myself (Eli Bendersky) and Igor Oks. We started our soccer 
+play-by-email journey in 1998, as managers in a fantasy league called WWISL, which used spreadsheets 
+to 'run' games. This was extremely cumbersome and time consuming, and the league fell apart shorty 
+after starting. However, the people who participated in WWISL were left with the feeling that this 
+kind of a game may be successful. Shortly after the WWISL fell apart, together with David Austin 
+(another ex-WWISL player) we teamed up to create a new play-by-email league, calling it the Global 
+Internet Soccer League (GISL). The GISL used a program named MSWL, which was created by Allan Sellers, 
+to run its games and had 30 participants (team managers). GISL went through all the difficult phases 
+of a start-up league, but managed to survive, and ran very successfully for 3 full seasons (a bit 
+longer than a calendar year) with MSWL. Over that time, the league developed some unique needs and 
+features that weren't covered by MSWL, and were handled manually.</p>
+<p>This is about the time when we 
+decided to create a program of our own, which will both answer the unique needs developed in GISL 
+and be an improvement of MSWL. We took our time during a break we had in our University studies 
+and in about a month created the basic skeleton of ESMS. It then took a couple of months of much 
+less intensive work to create the final form of the main (game running) program and the other 
+components, and ESMS was released in early 1999.</p>
+<p>For the record, the first official ESMS game was run on April 10th, 1999, in a test league we arranged 
+with some friends to test the program. The GISL started to use it almost immediately after release, 
+and it didn't take much time for other leagues to pop-up using this program. Today, ESMS is widely used in dozens of 
+leagues, by thousands of managers from all over the world.</p>
+<hr><p>Eli Bendersky (<a href="mailto:eliben@gmail.com">eliben@gmail.com</a>)</p>
+
+</body>
+
+</html>

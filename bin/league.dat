@@ -1,0 +1,31 @@
+home_bonus = 200
+dp_for_yellow = 4
+dp_for_red = 10 
+suspension_margin = 10
+max_injury_length = 9
+num_subs = 5
+substitutions = 3
+updtr_fitness_gain = 20
+updtr_fitness_after_injury = 80
+
+Abilities:
+AB_Goal = 50
+AB_Assist = 35
+AB_Victory_Random = 60
+AB_Clean_Sheet = 50
+AB_Ktk = 18
+AB_Kps = 12
+AB_Sht_On = 2
+AB_Sht_Off = 0
+AB_Sav = 12
+AB_Defeat_Random = -60
+AB_Concede = -8
+AB_Yellow = -8
+AB_Red = -20
+
+Abbreviations:
+ape = Apes_United
+klm = KLM_Royal_Club
+uva = Universidad_De_Valladolid
+
+

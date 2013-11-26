@@ -1,0 +1,23 @@
+ape
+A
+
+GK O_Voishtato
+DFC T_Eryur
+DFC C_Chinhooryo
+DFC D_Yiceny
+DFC C_Eja
+MFC V_Grusht
+MFC A_Urte
+MFC K_Jaezew
+MFC N_Noivo
+FWC B_Ohachusy
+FWC Z_Zoest
+
+GK R_Lisht
+DFC O_Cloartemn
+MFC Q_Foadsetroa
+DFC F_Udna
+FWC Q_Ronde
+
+PK: B_Ohachusy
+

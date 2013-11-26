@@ -1,0 +1,23 @@
+klm
+C
+
+GK L_Ryili
+DFC C_Umnablobt
+DFC B_Omo
+DFC M_Avraeshtab
+DFC S_Brarto
+DFC F_Ibto
+MFC R_Ukanyi
+MFC Z_Enodrewbt
+FWC V_Chisi
+FWC D_Donyuzi
+FWC X_Una
+
+GK S_Askabtipr
+DFC X_Badr
+MFC V_Ryenu
+DFC R_Ihe
+FWC D_Dorst
+
+PK: V_Chisi
+

@@ -1,0 +1,608 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ESMS Administrator Manual</title>
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#esms_administrator_manual">ESMS Administrator Manual</a></li>
+	<li><a href="#1._general_information">1. General information</a></li>
+	<li><a href="#2._tutorial">2. Tutorial</a></li>
+	<ul>
+
+		<li><a href="#2.1_preparation">2.1 Preparation</a></li>
+		<li><a href="#2.2_creating_the_rosters">2.2 Creating the rosters</a></li>
+		<li><a href="#2.3_generating_league_schedule">2.3 Generating league schedule</a></li>
+		<li><a href="#2.4_creating_the_teamsheets">2.4 Creating the teamsheets</a></li>
+		<li><a href="#2.5_running_the_games">2.5 Running the games</a></li>
+		<li><a href="#2.6_updating_the_league">2.6 Updating the league</a></li>
+		<li><a href="#2.7_that's_it">2.7 That's it</a></li>
+	</ul>
+
+	<li><a href="#3._esms_configuration_files">3. ESMS configuration files</a></li>
+	<ul>
+
+		<li><a href="#3.1_league.dat">3.1 league.dat</a></li>
+		<li><a href="#3.2_language.dat">3.2 language.dat</a></li>
+		<li><a href="#3.3_tactics.dat">3.3 tactics.dat</a></li>
+	</ul>
+
+	<li><a href="#4._esms_programs_and_the_files_they_work_on">4. ESMS programs and the files they work on</a></li>
+	<ul>
+
+		<li><a href="#4.1_esms__the_main_engine">4.1 <code>esms</code> - the main engine</a></li>
+		<li><a href="#4.2_commentary_files">4.2 Commentary files</a></li>
+		<li><a href="#4.3_reports.txt">4.3 reports.txt</a></li>
+		<li><a href="#4.4_stats.dir">4.4 stats.dir</a></li>
+		<li><a href="#4.5_teams.dir">4.5 teams.dir</a></li>
+		<li><a href="#4.6_updtr__the_updating_tool">4.6 <code>updtr</code> - the updating tool</a></li>
+		<li><a href="#4.7_updtr_summary.txt">4.7 updtr_summary.txt</a></li>
+		<li><a href="#4.8_table.txt">4.8 table.txt</a></li>
+		<li><a href="#4.9_lgtable__table_updating_tool">4.9 <code>lgtable</code> - table updating tool</a></li>
+		<li><a href="#4.10_tsc__teamsheet_creator">4.10 <code>tsc</code> - teamsheet creator</a></li>
+		<li><a href="#4.11_roster_creator__creator_of_esms_rosters">4.11 <code>roster_creator</code> - creator of ESMS rosters</a></li>
+		<li><a href="#4.12_roster_creator_cfg.txt">4.12 roster_creator_cfg.txt</a></li>
+		<li><a href="#4.13_fixtures__generators_of_league_fixtures/schedule">4.13 <code>fixtures</code> - generators of league fixtures/schedule</a></li>
+		<li><a href="#4.14_an_essential_subset_of_tools">4.14 An essential subset of tools</a></li>
+		<li><a href="#4.15_end_of_round_cleanup">4.15 End of round cleanup</a></li>
+	</ul>
+
+	<li><a href="#5._epilogue">5. Epilogue</a></li>
+	<ul>
+
+		<li><a href="#5.1_what's_next">5.1 What's next</a></li>
+		<li><a href="#5.2_contact">5.2 Contact</a></li>
+	</ul>
+
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="esms_administrator_manual">ESMS Administrator Manual</a></h1>
+<p>This document is the official Administrator's manual for the 
+ESMS program. 
+It explains how to use the ESMS family of programs to run a fantasy soccer league. 
+Familiarity with the ESMS User's Manual is assumed.</p>
+<p>
+</p>
+<hr />
+<h1><a name="1._general_information">1. General information</a></h1>
+<p>You are reading this document, which means that you have dowloaded ESMS and unzipped the
+package. If, for some reason you haven't, please do this now. Put everything in a single
+directory - I will call it the ``working directory'', or shortly the work dir. The work dir
+contains ESMS programs, configuration files and a ``doc/'' directory with the documentation.</p>
+<p>Some notation: <strong>administrator</strong> - the person who is in charge of a ESMS league. <strong>manager</strong> - a person
+participating in a league and managing a team.</p>
+<p>
+</p>
+<hr />
+<h1><a name="2._tutorial">2. Tutorial</a></h1>
+<p>I think that the best way to learn something is by going through an example.
+This section guides you through running a very simple (though a complete !) league. It's trivial and 
+will take only a few minutes, but it will get you started quickly with ESMS.</p>
+<p>This section swiftly goes through the steps - for an in-depth explanation of the programs
+and options involved, see the next section.</p>
+<p>
+</p>
+<h2><a name="2.1_preparation">2.1 Preparation</a></h2>
+<p>Make sure that you have the latest ESMS package unzipped to your work directory. ESMS programs
+are <strong>console based</strong> - that is, they don't have a GUI but provide a command line interface.
+You can work with ESMS from Windows like with any other program, but for some people it is more
+convenient to open a command prompt (Start-&gt;Run-&gt;cmd). Unix/Linux users almost always use a 
+command prompt.</p>
+<p>Also, make sure you have a text editor at hand. Notepad should do, but it's better to have
+something more powerful (for example Scite, Textpad, Ultraedit, GWD, etc). <strong>Do not</strong> use
+Word or Wordpad unless you know very well what you're doing, since 
+ESMS understands only plain text files, and those editors usually add special
+formatting characters that don't work with ESMS.</p>
+<p>
+</p>
+<h2><a name="2.2_creating_the_rosters">2.2 Creating the rosters</a></h2>
+<p>ESMS includes a program that creates rosters, which makes it simpler to initially setup leagues.
+The program is called <code>roster_creator</code> and it has a configuration file - roster_creator_cfg.txt
+Now run <code>roster_creator</code> - with its default options (which you can modify in roster_creator_cfg.txt).
+It should have created 4 new roster files: ss1.txt, ss2.txt, ss3.txt and ss4.txt</p>
+<p>Let us now decide on our team names. These are the abbreviations and full team names we will
+use:</p>
+<pre>
+ mac - Machos FC
+ bla - Blade Runners
+ esu - ESMS United
+ cra - Crazy Insomniacs</pre>
+<p>First of all, rename the rosters to these abbreviations - the rosters should now be 
+mac.txt, bla.txt, esu.txt and cra.txt. You can take a look at the rosters, by the way.
+The player names have been randomly generated by <code>roster_creator</code> - they're far from
+perfect, but usually you will either let your managers pick their players' names on
+their own, or will use real players names for your league. The rosters generated
+by <code>roster_creator</code> are good as templates and for testing.</p>
+<p>Next, we will set up the full names translation for ESMS. This is done in the main
+configuration file - league.dat; you should have this file now in the work dir, open
+it with a text editor.</p>
+<p>In the bottom of that file there's an Abbreviations section. Insert the abbreviations
+there as follows:</p>
+<pre>
+ Abbreviations:
+ mac = Machos_FC
+ bla = Blade_Runners
+ esu = ESMS_United
+ cra = Crazy_Insomniacs</pre>
+<p>Now ESMS will know the link between abbreviations and full team names. There is a lot
+of other interesting settings in league.dat, but that's for the next section. Note the
+underscores in the full teams' names. These replace spaces, just like in players'
+names.</p>
+<p>
+</p>
+<h2><a name="2.3_generating_league_schedule">2.3 Generating league schedule</a></h2>
+<p>Now we will generate the schedule for our small league. A schedule sets which team plays
+which and when. You don't have to do it manually, the <code>fixtures</code> program will help. First,
+create a text file named teams.txt - it lists the teams <code>fixtures</code> will use. Edit the
+file so it looks like this:</p>
+<pre>
+ Machos_FC
+ Blade_Runners
+ ESMS_United
+ Crazy_Insomniacs</pre>
+<p>Now, run <code>fixtures</code>. It should have generated a schedule 
+file named fixtures.txt - this file can be sent to the managers to know what games their
+team will play during the league and when. Our fixtures.txt starts like this:</p>
+<pre>
+ 1.</pre>
+<pre>
+ Machos_FC - Blade_Runners
+ ESMS_United - Crazy_Insomniacs</pre>
+<pre>
+ 2.
+ 
+ ESMS_United - Machos_FC
+ Blade_Runners - Crazy_Insomniacs
+ 
+ ... and so on
+ ...</pre>
+<p>So, in the first ``week'' of the league, Machos_FC plays against Blade_Runners and ESMS_United
+hosts Crazy_Insomniacs.</p>
+<p>
+</p>
+<h2><a name="2.4_creating_the_teamsheets">2.4 Creating the teamsheets</a></h2>
+<p>Now we'd like to run the first week of our league. But we need the teams' managers to send in
+teamsheets, and there are no managers yet. So what can you do ? The <code>tsc</code> program is just 
+for that - it takes a roster and generates a basic teamsheet for it. The teamsheet isn't too
+sophisticated - it has no orders, for example, but it generates correct teamsheets (it won't 
+name injured and suspended players).</p>
+<p>Run <code>tsc</code> - it asks for a roster name, give it <code>mac.txt</code>, give it also a formation+tactic, for
+example <code>442N</code>. It should now create a teamsheet for mac.txt and name it macsht.txt. Take
+a look at the teamsheet. Now repeat the same operation for the other 3 teams. At the end you
+should have 4 teamsheets, one for each team: macsht.txt, crasht.txt, esusht.txt and blasht.txt</p>
+<p>
+</p>
+<h2><a name="2.5_running_the_games">2.5 Running the games</a></h2>
+<p>Now we are finally ready to run the games of the first round in our league. Run <code>esms</code> (the 
+main engine). When it asks for a home teamsheet name give it macsht.txt, and for away teamsheet
+give it blasht.txt (recall from the schedule that these two teams clash in the first round).
+If everything is OK, ESMS will tell you that the game ended successfully.</p>
+<p>Take a look at the commentary file that was created: mac_bla.txt - it lists the game events (note that ESMS inserted the full
+team names where appropriate).</p>
+<p>Repeat the same to run a game between ESMS_United and Crazy_Insomniacs (run <code>esms</code> with
+esusht.txt and crasht.txt as the home and away teamsheets, respectively). You should get another
+new file - esu_cra.txt</p>
+<p>If you were running a real league now, you'd send each commentary file to the managers of the teams
+who played in that match.</p>
+<p>
+</p>
+<h2><a name="2.6_updating_the_league">2.6 Updating the league</a></h2>
+<p>If you look at the bottom of the commentary files, you will see that players accumulated statistics
+(such as goals and key tackles), got cards, lost fitness, etc. All this should be now reflected in
+the rosters. Besides, you have to create a summary of the round, and create/update the league 
+table. The updating tool <code>updtr</code> does all that. It's as simple as a couple of clicks.</p>
+<p>But first you should create a teams listing for the tool to know which teams it should update. Create
+a new file - teams.dir (you do this only once for your league !), and put the following into it:</p>
+<pre>
+ mac.txt
+ bla.txt
+ esu.txt
+ cra.txt</pre>
+<p>Now run <code>updtr</code> and select option 6 (full update). When you press Enter, <code>updtr</code> runs and 
+gives you a full report of what it did. <code>updtr</code> did many interesting things - it updated
+the rosters (you can take a look at them now), and created several new files. table.txt is
+the league table, for example. updtr_summary.txt is a summary of the round that is ready to be sent
+to the managers, together with reports.txt that lists all the results. Read in the next section
+about what goes into these files.</p>
+<p>
+</p>
+<h2><a name="2.7_that's_it">2.7 That's it</a></h2>
+<p>Wasn't it simple ? Running the next rounds is even simpler, because you don't have to do 
+all the initializations like changing league.dat and creating the fixtures and teams.dir</p>
+<p>What you should remember to do is delete the stats.dir file before the next round, so that
+<code>updtr</code> won't do unnecessary updates. When you run the main engine for the next round, it
+will create a fresh and relevant stats.dir file. The next section explains everything in
+much more detail.</p>
+<p>
+</p>
+<hr />
+<h1><a name="3._esms_configuration_files">3. ESMS configuration files</a></h1>
+<p>This section explains in detail each configuration file ESMS uses.</p>
+<p>
+</p>
+<h2><a name="3.1_league.dat">3.1 league.dat</a></h2>
+<p>ESMS is highly customizable, which allows every league to tailor it to its specific needs. The
+main configuration file in ESMS is <code>league.dat</code>. This file is built from</p>
+<pre>
+ key = value</pre>
+<p>pairs. The keys are not case sensitive, so HOME_BONUS and home_bonus mean the same. The following
+are the keys of <code>league.dat</code> ESMS understands:</p>
+<ul>
+<li><strong><a name="item_home_bonus">HOME_BONUS</a></strong><br />
+</li>
+The advantage that a home team has over an away team. The normal values are between 100 and 300. If it's
+set to 0, there's no advantage to the home team. If it's negative, there is an advantage to an away team.
+<p></p>
+<li><strong><a name="item_cup">CUP</a></strong><br />
+</li>
+ESMS supports penalty shootouts, for occasions like cup games that end with a draw. This option is
+for such occasions. If it doesn't exist in league.dat or is set at 0, all games are considered normal,
+not cup games, and penalties won't be run. If it's set to 1, ESMS will ask you after each game whether
+to run a penalty shootout. If it's set to 2, ESMS will run the shootout after each game, without asking.
+<p></p>
+<li><strong><a name="item_team_stats_total">TEAM_STATS_TOTAL</a></strong><br />
+</li>
+Set this option to 1 if you want team stats (signifying their strengths in defense, midfield and 
+attack) to be printed to the end of the commentary each 10 minutes. Usage of this option is 
+<strong>strongly discouraged</strong> in normal league games - use it only if you want to analyze a team's
+performance or run test matches.
+<p></p>
+<li><strong><a name="item_num_subs">NUM_SUBS</a></strong><br />
+</li>
+Amount of substituting players that can be listed in a teamsheet.
+By default (when this option isn't present in league.dat), ESMS assumes that the amount of subs
+is 7. You can set it to another number if your league has different rules.
+<p></p>
+<li><strong><a name="item_substitutions">SUBSTITUTIONS</a></strong><br />
+</li>
+Amount of substitutions each team is allowed to perform during a game.
+By default, ESMS assumes that it is 3.
+<p></p>
+<li><strong><a name="item_dp_for_yellow">DP_FOR_YELLOW</a></strong><br />
+</li>
+The amount of disciplinary points given for a yellow card.
+<p></p>
+<li><strong><a name="item_dp_for_red">DP_FOR_RED</a></strong><br />
+</li>
+The amount of disciplinary points given for a red card.
+<p></p>
+<li><strong><a name="item_suspension_margin">SUSPENSION_MARGIN</a></strong><br />
+</li>
+This options is used to decide when players are suspended. The common value leagues use is
+10. That means a suspension for each 10 disciplinary points. At 10 DP, a player is suspended
+for one game, at 20 DP - for two games, at 30 DP - for three games, and so on.
+<p></p>
+<li><strong><a name="item_max_injury_length">MAX_INJURY_LENGTH</a></strong><br />
+</li>
+The longest duration (in weeks) of a player injury.
+<p></p>
+<li><strong><a name="item_updtr_fitness_gain">UPDTR_FITNESS_GAIN</a></strong><br />
+</li>
+The average amount of fitness points a player gains after a game from getting a rest.
+<p></p>
+<li><strong><a name="item_updtr_fitness_after_injury">UPDTR_FITNESS_AFTER_INJURY</a></strong><br />
+</li>
+The average amount of fitness points a player has when he comes back from an injury.
+<p></p>
+<li><strong><a name="item_abilities">ABILITIES</a></strong><br />
+</li>
+The ``Abilities:'' section in league.dat lists the amounts of ability points given 
+for different events/statistics. The names of the options are self-explanatory.
+<p></p>
+<li><strong><a name="item_abbreviations">ABBREVIATIONS</a></strong><br />
+</li>
+The ``Abbreviations:'' section in league.dat lists the links between short and full team 
+names in <code>short = full</code> style. The ESMS tools use the short names (usually a 3 letter
+abbreviation) for some things, and full names for some things, and this section is 
+read to establish the connections.
+<p></p></ul>
+<p>
+</p>
+<h2><a name="3.2_language.dat">3.2 language.dat</a></h2>
+<p>ESMS is designed to allow easy translation to languages other than English. The <code>language.dat</code>
+file is a single point of reference for language-dependent strings. By translating this file,
+people can decide how ESMS prints out game commentaries.</p>
+<p>Translation is not the only use of <code>language.dat</code>, however. It also allows to extend the
+commentaries ESMS prints, and some leagues inded took advantage of this feature.</p>
+<p>Take a look at <code>language.dat</code> - its structure is self-explanatory. Lines starting with <code>|</code>
+are comments which explain how to translate each commentary group.</p>
+<p>
+</p>
+<h2><a name="3.3_tactics.dat">3.3 tactics.dat</a></h2>
+<p>When ESMS runs a game, it computes three major skill totals for each team, and uses 
+those to run the simulation. The totals are:</p>
+<ul>
+<li></li>
+Team tackling - stopping the opponent's attacks.
+<p></p>
+<li></li>
+Team passing - creating attacks.
+<p></p>
+<li></li>
+Team shooting - has two effects: creating attacks (to a lesser extent than team passing), and
+scoring goals from these attacks.
+<p></p></ul>
+<p>To compute these three totals, the contribution of each active player is summed. Each player
+(except the GK) contributes to all three totals, depending on his major skills (Tk, Ps, Sh),
+team tactic, and other factors (side, fitness, etc). The tactic acts as a multiplier on the
+player's major skills. For each position the player plays, the contributions are different.
+All these multipliers are set in the <code>tactics.dat</code> configuration file.</p>
+<p>The defaults that come with ESMS withstood the testing of time, so it's adviced not to change
+them, although that is possible if your league wants to modify tactics or even create new ones.</p>
+<p>A sample from <code>tactics.dat</code> will explain its structure:</p>
+<pre>
+ # P - Passing
+ MULT P DF TK 1.0
+ MULT P DF PS 0.75
+ MULT P DF SH 0.3 
+ 
+ MULT P DM TK 0.87
+ MULT P DM PS 0.87
+ MULT P DM SH 0.28
+ 
+ MULT P MF TK 0.25
+ MULT P MF PS 1.0
+ MULT P MF SH 0.25
+ 
+ MULT P AM TK 0.25
+ MULT P AM PS 0.87
+ MULT P AM SH 0.68
+ 
+ MULT P FW TK 0.25
+ MULT P FW PS 0.75
+ MULT P FW SH 1.0
+ 
+ BONUS P L MF SH 0.5
+ BONUS P L MF TK 0.5
+ BONUS P L FW SH 0.25</pre>
+<p>There are two types of lines here. MULT lines set the tactic multiplier - for each of the positions
+(DF, DM, MF, AM, FW) - each of the contributions (TK, PS, SH). Thus, for example a DF in a team
+playing P has his PS contribution multiplied by 0.75. BONUS lines add bonuses to certain tactics
+against other tactics.</p>
+<p>
+</p>
+<hr />
+<h1><a name="4._esms_programs_and_the_files_they_work_on">4. ESMS programs and the files they work on</a></h1>
+<p>ESMS consists of several programs and some files these programs read and write. For each program,
+I list the input files it expects and  the output files it generates</p>
+<p>Note: Each of the ESMS programs can accept a command line argument <code>--no_wait_on_exit</code> that makes
+it exit immediately after finishing, without waiting for you to press Enter. While the waiting is
+convenient when running from Windows, people who use ESMS from the command line usually prefer to
+supply this argument. For running automatic games, it is essential.</p>
+<p>
+</p>
+<h2><a name="4.1_esms__the_main_engine">4.1 <code>esms</code> - the main engine</a></h2>
+<p><code>esms</code> is the main game engine of ESMS. It runs a simulation of a soccer game between two teams,
+given their teamsheets and rosters (you can learn in detail about teamsheets and rosters in the 
+User's manual).</p>
+<p><strong>Input</strong>: Configuration files (league.dat, language.dat, tactics.dat), a pair of rosters and
+a pair of teamsheets for these rosters.</p>
+<p><strong>Output</strong>: A commentary file for the game, and adds a line to the reports.txt file, and a line to the
+stats.dir file.</p>
+<p>
+</p>
+<h2><a name="4.2_commentary_files">4.2 Commentary files</a></h2>
+<p>A commentary file is generated by <code>esms</code> and contains the listing of all major events in the game.
+It is intended to be read by humans, and is usually sent to the two managers of the playing teams.
+The commentary file also contains a summary of game statistics and changes in players' attributes
+which is used by <code>updtr</code> to update the rosters.</p>
+<p>
+</p>
+<h2><a name="4.3_reports.txt">4.3 reports.txt</a></h2>
+<p>reports.txt contains a summary of games' results. It is generated by <code>esms</code> and can be sent to
+the whole league announcing all the scores in some round. This file is also used when updating
+the league table.</p>
+<p>
+</p>
+<h2><a name="4.4_stats.dir">4.4 stats.dir</a></h2>
+<p>stats.dir contains a list of commentary files which <code>updtr</code> should use to update the rosters.
+<code>esms</code> creates it and adds a line to it for each game it runs. In the end of the round, after
+<code>updtr</code> did its updating, this file
+should be deleted - it will be regenerated by <code>esms</code> in the next round.</p>
+<p>
+</p>
+<h2><a name="4.5_teams.dir">4.5 teams.dir</a></h2>
+<p>teams.dir is simply a list of the rosters that make your league. It should be created only once
+in the beginning of your league season. This file is essential for <code>updtr</code> to know which rosters
+it should update.</p>
+<p>
+</p>
+<h2><a name="4.6_updtr__the_updating_tool">4.6 <code>updtr</code> - the updating tool</a></h2>
+<p><code>updtr</code> is the second of the two most important tools an ESMS league administrator uses to run
+a league. After <code>esms</code> runs all the games, <code>updtr</code> is used to handle all the rest - update the
+rosters with player statistics, update the league table with the latest results, and take care
+of injuries, suspensions and fitness. <code>updtr</code> can do it all just in a few clicks, and usually
+runs smoothly if your league files are set up correctly.</p>
+<p>When you run <code>updtr</code> you get the following menu:</p>
+<pre>
+ What would you like to do ?
+ 
+ 1) Update rosters
+ 2) Decrease injuries
+ 3) Decrease suspensions
+ 4) Update league table
+ 5) Decrease suspensions + update rosters
+ 6) Decrease suspensions, injuries + update rosters, league table
+ 
+ Enter your choice -&gt;</pre>
+<p>This lists the various functions <code>updtr</code> performs, and their combinations to make matters simpler. The
+functions are:</p>
+<p><strong>Update rosters</strong>: <code>updtr</code> looks at all game commentaries listed in stats.dir, and updates
+the players' attributes from the played games in the team's rosters. For example, it adds
+1 to the ``Games played'' statistic of all players who played, computes the injury periods of 
+newly injured players, etc.</p>
+<p><strong>Decrease injuries / suspensions</strong>: Players in ESMS are injured for a certain amount of weeks and
+suspended for a certain amount of games. <code>updtr</code> takes care to reduce the period of injury/suspension
+of each injured/suspended player. These options are separated because in some occasions suspensions
+and injuries are not parallel. For instance, in cup games that happen in the middle of the week, injuries
+are usually not decreased, but suspensions are.</p>
+<p><strong>Update league table</strong>: <code>updtr</code> takes table.txt and the latest results from reports.txt and updates
+the table. If the table doesn't exist (like in the first league round), <code>updtr</code> just creates it.</p>
+<p>The other options are combinations to make working with <code>updtr</code> more efficient. For instance, (6) is
+used to update after league rounds - it does everything one needs. Most often, this is the single option
+admins use after running league rounds. (5) is often used to run updates after cup games. The multitude
+of separate options and their combinations were designed to provide the league administrator with a
+maximal level of flexibility.</p>
+<p><strong>Input</strong>: <code>updtr</code>'s input depends on the function you ask it to perform, but generally it uses:
+the configuration file league.dat, stats.dir, teams.dir, commentary files listed in stats.dir,
+rosters, reports.txt and table.txt</p>
+<p><strong>Output</strong>: <code>updtr</code> updates the rosters, table.txt and creates a summary file to be sent to
+the league managers - updtr_summary.txt</p>
+<p>
+</p>
+<h2><a name="4.7_updtr_summary.txt">4.7 updtr_summary.txt</a></h2>
+<p>A summary file created by <code>updtr</code> after each round. This file contains interesting information about
+the league round, together with some statistics. It is usually sent to the managers of the league 
+after each round.</p>
+<p>
+</p>
+<h2><a name="4.8_table.txt">4.8 table.txt</a></h2>
+<p>This is a standard league table file. For example:</p>
+<pre>
+ Pl   Team                    P    W   D   L    GF   GA   GD   Pts
+ -----------------------------------------------------------------
+ 1    Blade Runners           4    2   2   0     3    1    2     8
+ 2    Crazy Insomniacs        4    2   0   2     5    4    1     6
+ 3    ESMS United             4    1   2   1     4    3    1     5
+ 4    Machos FC               4    0   2   2     0    4   -4     2</pre>
+<p>The columns are: Pl - place, Team - team name, P - games played, W/D/L - games won/drawn/lost, GF - goals
+for (how many goals the team scored), GA - goals against (how many goals the team conceded), GD - goal
+difference, Pts - points.</p>
+<p>
+</p>
+<h2><a name="4.9_lgtable__table_updating_tool">4.9 <code>lgtable</code> - table updating tool</a></h2>
+<p>The league table updating ability is so useful that a separate tool exists to handle it. League
+administrators don't really need it to run a league, but I include it in the package because some
+people find it convenient. <code>lgtable</code> does what <code>updtr</code> does in its table update - it updates table.txt
+with results from reports.txt.</p>
+<p><strong>Input</strong>: table.txt and reports.txt</p>
+<p><strong>Output</strong>: updates the table.txt</p>
+<p>
+</p>
+<h2><a name="4.10_tsc__teamsheet_creator">4.10 <code>tsc</code> - teamsheet creator</a></h2>
+<p><code>tsc</code> assists managers to create template teamsheets. It is given a roster name and a formation+tactic
+and creates a teamsheet. Don't expect <code>tsc</code>'s teamsheets to bring you the league title - they are
+far from being sophisticated. <code>tsc</code> doens't care about fitness, sides and it doesn't create orders.
+But the teamsheets it creates are <strong>correct</strong> (contain no injured/suspended players) - they will run with <code>esms</code>
+so it is useful to just create template teamsheets for your team. Administrators also use <code>tsc</code> to create
+teamsheets for managers that forgot to send a teamsheet for some game.</p>
+<p><strong>Input</strong>: a roster</p>
+<p><strong>Output</strong>: a teamsheet</p>
+<p>
+</p>
+<h2><a name="4.11_roster_creator__creator_of_esms_rosters">4.11 <code>roster_creator</code> - creator of ESMS rosters</a></h2>
+<p><code>roster_creator</code> creates as many random rosters as you want, using a configuration file - roster_creator_cfg.txt
+It is very useful for creating random players and teams.</p>
+<p><strong>Input</strong>: roster_creator_cfg.txt configuration file</p>
+<p><strong>Output</strong>: one or more rosters, depending on what's set in the configuration file.</p>
+<p>
+</p>
+<h2><a name="4.12_roster_creator_cfg.txt">4.12 roster_creator_cfg.txt</a></h2>
+<p>This file sets the configuration options for <code>roster_creator</code> as <code>key = value</code> pairs.</p>
+<ul>
+<li><strong><a name="item_n_rosters">n_rosters</a></strong><br />
+</li>
+The amount of rosters to create.
+<p></p>
+<li><strong><a name="item_n_gk%2c_n_df%2c_n_dm%2c_n_mf%2c_n_dm%2c_n_mf%2c_n_">n_gk, n_df, n_dm, n_mf, n_dm, n_mf, n_am, n_fw</a></strong><br />
+</li>
+The amount of players to create for each position. <code>roster_creator</code> creates players that are suitable
+for certain positions - for example players with high Ps for MF.
+<p></p>
+<li><strong><a name="item_average_stamina">average_stamina</a></strong><br />
+</li>
+The average stamina of players. The actual stamina (and all other ``average'' options) is created
+by a pseudo-random process, and <code>roster_creator</code> tries to fit the average rating to the option
+set in the configuration.
+<p></p>
+<li><strong><a name="item_average_aggression">average_aggression</a></strong><br />
+</li>
+The average aggression level of players.
+<p></p>
+<li><strong><a name="item_average_main_skill%2c_average_mid_skill%2c_average">average_main_skill, average_mid_skill, average_secondary_skill</a></strong><br />
+</li>
+Main skill is the primary skill for each position, like Ps for MFs. Mid skill is the skill
+for the DM and AM positions. I.e. mid_skill = 11 means 11 at Tk and Ps for DMs (all in average,
+of course). Secondary skill is the non-primary skill of players, like Tk and Ps for FWs.
+<p></p>
+<li><strong><a name="item_roster_name_prefix">roster_name_prefix</a></strong><br />
+</li>
+Given some prefix ``xx'', <code>roster_creator</code> creates rosters with the names ``xx1.txt'', ``xx2.txt''
+and so on.
+<p></p>
+<li><strong><a name="item_generate_names">generate_names</a></strong><br />
+</li>
+Set this to 1 if you want <code>roster_creator</code> to create randomized names for the players. If this
+option is not set, blank spaces will be left in the rosters instead of the names.
+<p></p></ul>
+<p>
+</p>
+<h2><a name="4.13_fixtures__generators_of_league_fixtures/schedule">4.13 <code>fixtures</code> - generators of league fixtures/schedule</a></h2>
+<p>This program creates a schedule / fixtures list for a league. A league is played in two
+rounds, N-1 games in each round (where N is the amount of teams). During a league run,
+each team plays each other team twice, once home and once away.</p>
+<p><strong>Input</strong>: table.txt - list of team names to create the fixtures for. Full names should be listed
+here.</p>
+<p><strong>Output</strong>: a list of fixtures in fixtures.txt</p>
+<p>The input and output of this program is so simple that there's no point to list the files
+it uses separately.</p>
+<p>
+</p>
+<h2><a name="4.14_an_essential_subset_of_tools">4.14 An essential subset of tools</a></h2>
+<p>You probably noticed that the only tools a league administrator <em>really</em> needs are <code>esms</code>
+and <code>updtr</code>. All the rest are just auxiliary programs some administrators use, and some
+don't.</p>
+<p>
+</p>
+<h2><a name="4.15_end_of_round_cleanup">4.15 End of round cleanup</a></h2>
+<p>Most of the files created by the ESMS programs during a run of some round are either 
+temporaries that are needed to communicate between the tools, or information files that 
+are to be sent to the league managers. The files that really last between rounds are 
+the configuration files, teams.dir, table.txt and the rosters. 
+All the other files are usually deleted after performing 
+their purpose, in order not to clutter the league directory. For example, after a round 
+is run, the commentary files, reports.txt and stats.dir should be deleted.</p>
+<p>
+</p>
+<hr />
+<h1><a name="5._epilogue">5. Epilogue</a></h1>
+<p>
+</p>
+<h2><a name="5.1_what's_next">5.1 What's next</a></h2>
+<p>That's about it for a guide on ESMS administration. Like with any unfamiliar program, it
+may look intimidating at first, but once you get to know it, it is really very simple. When
+your league is correctly set up, running the ESMS tools is very simple and only takes a few
+moments. Seasoned administrators report that each week the bulk of their time (which isn't
+more than a few minutes) goes into fixing mistakes in teamsheets sent in by managers. The
+rest of the process - running the games and updates takes almost no time.</p>
+<p>So if you are new to ESMS, the best advice I can give is <strong>practice</strong>. Go through the 
+tutorial again, make sure everything makes sense, run a few more rounds, set up a small
+test league for friends. Practice brings perfection.</p>
+<p>If you need any help at setting up a league, or have any questions and requests regarding
+the ESMS programs, feel free to ask me.</p>
+<p>
+</p>
+<h2><a name="5.2_contact">5.2 Contact</a></h2>
+<p>This document, as is ESMS itself, was written and is maintained by Eli Bendersky. My email address
+is <a href="mailto:eliben@gmail.com.">eliben@gmail.com.</a> Feel free to send me comments, feedback and questions. I usually answer emails
+very regularly and will be glad to help.</p>
+<p>ESMS also has a low-volume, but important mailing list at Yahoo Groups. In the list new features are 
+usually discussed, and
+people often ask questions and request ideas for their ESMS leagues. To sign to the mailing list,
+visit <a href="http://groups.yahoo.com">http://groups.yahoo.com</a> and look for <code>esms</code>.</p>
+<hr><p>Eli Bendersky (<a href="mailto:eliben@gmail.com">eliben@gmail.com</a>)</p>
+
+</body>
+
+</html>

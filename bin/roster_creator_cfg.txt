@@ -1,0 +1,15 @@
+n_rosters = 4
+n_gk = 3
+n_df = 8
+n_dm = 3 
+n_mf = 8
+n_am = 3
+n_fw = 5
+average_stamina = 50
+average_aggression = 30
+average_main_skill = 15
+average_mid_skill = 12
+average_secondary_skill = 9
+roster_name_prefix = ss
+generate_names = 1
+
